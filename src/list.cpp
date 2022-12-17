@@ -105,3 +105,26 @@ void List::print_item()
         cout<< "You enter a wrong input !!!";
     }
 }
+
+void List::find_userlist()
+{
+    bool userfind = false;
+
+    cout <<"\n\n\n\n\n";
+    cout <<"********welcome " << name << " **** " <<endl;
+
+    for (int user_index=0; user_index< (int)mainlist.size();user_index++)
+    {
+        cout << mainlist[user_index][0] << endl;
+
+        if( mainlist[user_index][0] == name)
+        {
+            cout <<"user has been found : " << mainlist[user_index][0] << endl;
+            list = mainlist[user_index];
+            userfind = true;
+            break;
+
+        }
+
+    }
+}

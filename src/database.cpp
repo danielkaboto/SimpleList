@@ -1,16 +1,18 @@
 #include"include/database.h"
 
-void Database::write(vector <string> list)
+void Database::write(vector <vector<string>> mainlist)
 {
     ofstream db;
     db.open("db/lists.sl");
 
     if( db.is_open())
     {
-        for ( int i = 0 ; i < (int)list.size(); i++)
+        for ( int user_index = 0 ; user_index < (int)mainlist[user_index].size(); user_index++)
         {
-            //take all element in our list and put in the the database
-            db << " * " << list[i] << endl;
+            for (int list_index = 0; list_index < (int)mainlist[user_index][list_index].size();list_index++)
+            {
+                db<< mainlist[user_index][list_index] <<endl;
+            }
         }
 
     }

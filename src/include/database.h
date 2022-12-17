@@ -22,7 +22,7 @@ class Database
 
     vector <vector<string>> mainlist;
     string name;
-    void write(vector <string> mainlist);
+    void write(vector <vector<string>> mainlist);
 
     vector<vector<string>> read();
 
