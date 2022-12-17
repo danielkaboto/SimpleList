@@ -20,10 +20,10 @@ class Database
         //destructor
     }
 
-    vector <string> list;
+    vector <vector<string>> mainlist;
     string name;
-    void write(vector <string> list);
+    void write(vector <string> mainlist);
 
-    void read();
+    vector<vector<string>> read();
 
 };

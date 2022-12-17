@@ -8,12 +8,13 @@ int main(int arg_count , char *args[])
     List L1;
     if(arg_count > 1)
     {
-       
+
         L1.name = string(args[1]);
+        data.read();
         L1.print_menu();
         
-        data.write(L1.list);
-        data.read();
+        //data.write(L1.list);
+       // data.read();
 
 
 
