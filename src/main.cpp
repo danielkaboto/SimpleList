@@ -13,9 +13,9 @@ int main(int arg_count , char *args[])
         L1.mainlist = data.read();
         L1.find_userlist();
         L1.print_menu();
+        data.write(L1.mainlist);
         
-        //data.write(L1.list);
-       // data.read();
+     
 
 
 

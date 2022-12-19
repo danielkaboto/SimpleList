@@ -5,25 +5,30 @@ void Database::write(vector <vector<string>> mainlist)
     ofstream db;
     db.open("db/lists.sl");
 
-    if( db.is_open())
-    {
-        for ( int user_index = 0 ; user_index < (int)mainlist[user_index].size(); user_index++)
-        {
-            for (int list_index = 0; list_index < (int)mainlist[user_index][list_index].size();list_index++)
-            {
-                db<< mainlist[user_index][list_index] <<endl;
+    if( db.is_open() ) {
+        for( int user_index=0; user_index < (int)mainlist.size(); user_index++ ) {
+            for ( int list_index=0; list_index < (int)mainlist[user_index].size(); list_index++) {
+                if ( list_index == 0 ){
+                    db << "#" << mainlist[user_index][list_index] << "\n";
+                }
+                else {
+                    db << mainlist[user_index][list_index] << "\n";
+                } 
             }
+            db << "%" << "\n";
         }
-
     }
-    else
-    {
-        cout <<"Cannot open the file for writing !";
+    else {
+        cout << "Cannot open file for writing.\n";
     }
 
     db.close();
 
+
 }
+   
+
+
 
  vector<vector<string>> Database::read()
 {
